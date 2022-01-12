@@ -15,9 +15,14 @@ public class MainRunner {
 				
 		switch (ans) {
 		  case "1":
-		    System.out.println("Welcome!");
+//		    System.out.println("Welcome!");
 		    enterProgram.close();
-		    break;
+		    
+		    RunProgram runProgram = new RunProgram();
+		    
+		    runProgram.runner();
+		    
+//		    break;
 		  case "2":
 		    System.out.println("Bye!!!");
 		    enterProgram.close();
