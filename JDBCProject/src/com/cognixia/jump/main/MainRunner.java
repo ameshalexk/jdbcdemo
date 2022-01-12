@@ -16,11 +16,13 @@ public class MainRunner {
 		switch (ans) {
 		  case "1":
 //		    System.out.println("Welcome!");
-		    enterProgram.close();
+//		    enterProgram.close();
 		    
 		    RunProgram runProgram = new RunProgram();
 		    
 		    runProgram.runner();
+		    
+		    enterProgram.close();
 		    
 //		    break;
 		  case "2":
@@ -29,7 +31,7 @@ public class MainRunner {
 		    break;
 		  default:
 		    System.out.println("Invalid Input....exiting program!!!");
-		    enterProgram.close();
+//		    enterProgram.close();
 		}
 		
 		

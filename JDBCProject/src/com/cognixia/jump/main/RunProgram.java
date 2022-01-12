@@ -2,6 +2,10 @@ package com.cognixia.jump.main;
 
 import java.util.Scanner;
 
+import com.cognixia.jump.dao.EmployeeDaoFile;
+
+
+
 public class RunProgram {
 	
 	public void runner () {
@@ -13,13 +17,27 @@ public class RunProgram {
 	    
 		Scanner enterProgram2 = new Scanner(System.in);
 		
-		String ans = enterProgram2.nextLine();
+		String ans2 = null;
+		try {
+			ans2 = enterProgram2.next();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-	    
-	    switch (ans) {
+	    enterProgram2.close();
+
+	    switch (ans2) {
 		  case "1":
 			  System.out.println("Getting entries");
 			  
+				EmployeeDaoFile fileRunner = new EmployeeDaoFile();
+				System.out.println(fileRunner.getAllEmployees());
+			  		  
+				System.out.println("done2");
+				
+
+				
 		    break;
 		  case "2":
 			  System.out.println("Adding entries");
