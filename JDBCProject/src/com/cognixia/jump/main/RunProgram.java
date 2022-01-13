@@ -1,7 +1,9 @@
 package com.cognixia.jump.main;
 
+import java.util.List;
 import java.util.Scanner;
 
+import com.cognixia.jump.dao.Employee;
 import com.cognixia.jump.dao.EmployeeDaoFile;
 
 
@@ -32,15 +34,65 @@ public class RunProgram {
 			  System.out.println("Getting entries");
 			  
 				EmployeeDaoFile fileRunner = new EmployeeDaoFile();
-				System.out.println(fileRunner.getAllEmployees());
-			  		  
-				System.out.println("done2");
+				List<Employee> employee = fileRunner.getAllEmployees();
 				
+				System.out.println("----------------------------------------------------------------------------------------------------------");
+		        System.out.printf("%20s %20s %20s %20s %20s", "ID", "FIRST NAME", "LAST NAME", "SALARY (USD)", "DEPARTMENT");
+		        System.out.println();
+				System.out.println("----------------------------------------------------------------------------------------------------------");
 
-				
+		        for(int i = 0; i < employee.size(); i++){
+		        	Object query = employee.get(i);
+		        	
+		        	String s = query.toString();
+		        	
+		        	String[] arrOfStr = s.split(" ");
+		        	
+		        	for (String a : arrOfStr)
+		        		System.out.format("%20s",a);
+		        	System.out.println();
+		        			
+		        }
+		        
+				System.out.println("----------------------------------------------------------------------------------------------------------");
+		 				
+								
 		    break;
 		  case "2":
 			  System.out.println("Adding entries");
+			  			  
+			  	System.out.println("Please enter the below data to create the entry - \n");
+			    System.out.println("1 - Enter below the First name of the employee - ");
+	    
+				Scanner one = new Scanner(System.in);
+				
+				String first_name = null;
+				String last_name = null;
+				String salary = null;
+				String department = null;
+				
+				
+				
+//				try {
+//					id = enterProgram2.next();
+//					Employee newEmployee = new Employee(id, first_name, last_name, salary, department);
+//					
+//					
+//					
+//					
+//					
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+				
+			    enterProgram2.close();
+			  
+			  
+			  
+			  
+				EmployeeDaoFile fileRunner2 = new EmployeeDaoFile();
+//				fileRunner2.addEmployee(employeeObject);
+				
 
 		    break;
 		  case "3":

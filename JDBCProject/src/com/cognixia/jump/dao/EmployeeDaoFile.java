@@ -1,6 +1,7 @@
 package com.cognixia.jump.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -39,19 +40,29 @@ public class EmployeeDaoFile implements EmployeeDao  {
 			e.printStackTrace();
 		}
 		return employees;
-		
-	
-	}
-
-	@Override
-	public Employee getEmployeeById(int id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
 	public boolean addEmployee(Employee employee) {
-		// TODO Auto-generated method stub
+		
+		int count = 0;
+		try {
+			PreparedStatement statement = connection.prepareStatement("INSERT INTO employees "
+					+ "(first_name, last_name, salary, department) "
+					+ "VALUES (?,?,?,?)");
+			
+			statement.setString(1, employee.getFirst_Name());
+			statement.setString(2, employee.getLast_name());
+			statement.setInt(3, employee.getSalary());
+			statement.setString(4, employee.getDepartment());
+			
+			count = statement.executeUpdate();
+			statement.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (count == 1) return true;
 		return false;
 	}
 

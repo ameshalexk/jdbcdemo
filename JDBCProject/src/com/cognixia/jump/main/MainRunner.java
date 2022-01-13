@@ -14,24 +14,20 @@ public class MainRunner {
 		String ans = enterProgram.nextLine();
 				
 		switch (ans) {
-		  case "1":
-//		    System.out.println("Welcome!");
-//		    enterProgram.close();
-		    
+		  case "1":		    
 		    RunProgram runProgram = new RunProgram();
 		    
 		    runProgram.runner();
 		    
 		    enterProgram.close();
 		    
-//		    break;
+		    break;
 		  case "2":
 		    System.out.println("Bye!!!");
 		    enterProgram.close();
 		    break;
 		  default:
 		    System.out.println("Invalid Input....exiting program!!!");
-//		    enterProgram.close();
 		}
 		
 		
