@@ -23,7 +23,7 @@ public class MainRunner {
 		    
 		    break;
 		  case "2":
-		    System.out.println("Byeee!!!");
+		    System.out.println("Byee!!!");
 		    enterProgram.close();
 		    break;
 		  default:
