@@ -10,8 +10,6 @@ import java.util.List;
 
 import com.cognixia.jump.connection.ConnectionManagerWithProps;
 
-
-
 public class EmployeeDaoFile implements EmployeeDao  {
 	private Connection connection = ConnectionManagerWithProps.getConnection();
 
@@ -59,7 +57,6 @@ public class EmployeeDaoFile implements EmployeeDao  {
 			count = statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if (count == 1) return true;
@@ -67,14 +64,16 @@ public class EmployeeDaoFile implements EmployeeDao  {
 	}
 
 	@Override
-	public boolean updateEmployee(Employee employee) {
-		// TODO Auto-generated method stub
+	public boolean updateEmployee(int id) {
+		
+
+		
+		
 		return false;
 	}
 
 	@Override
-	public boolean deleteEmployee(Employee employee) {
-		// TODO Auto-generated method stub
+	public boolean deleteEmployee(int id) {
 		return false;
 	}
 

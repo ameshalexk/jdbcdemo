@@ -22,6 +22,14 @@ public class Employee {
 		this.department = department;
 	}
 
+	public Employee(String first_Name, String last_name, int salary, String department) {
+		super();
+		this.first_Name = first_Name;
+		this.last_name = last_name;
+		this.salary = salary;
+		this.department = department;
+	}
+	
 	public int getId() {
 		return id;
 	}
