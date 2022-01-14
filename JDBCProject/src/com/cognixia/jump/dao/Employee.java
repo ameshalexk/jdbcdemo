@@ -5,7 +5,7 @@ public class Employee {
 	
 	private int id;
 	private String first_Name;
-	private String last_name;
+	private String last_Name;
 	private int salary;
 	private String department;
 	
@@ -17,7 +17,7 @@ public class Employee {
 		super();
 		this.id = id;
 		this.first_Name = first_Name;
-		this.last_name = last_name;
+		this.last_Name = last_name;
 		this.salary = salary;
 		this.department = department;
 	}
@@ -25,7 +25,7 @@ public class Employee {
 	public Employee(String first_Name, String last_name, int salary, String department) {
 		super();
 		this.first_Name = first_Name;
-		this.last_name = last_name;
+		this.last_Name = last_name;
 		this.salary = salary;
 		this.department = department;
 	}
@@ -46,12 +46,12 @@ public class Employee {
 		this.first_Name = first_Name;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLast_Name() {
+		return last_Name;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLast_Name(String last_Name) {
+		this.last_Name = last_Name;
 	}
 
 	public int getSalary() {
@@ -72,7 +72,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return  id + " " + first_Name  + " " + last_name + " " +  salary + " " +  department ;
+		return  id + " " + first_Name  + " " + last_Name + " " +  salary + " " +  department ;
 	}
 	
 	

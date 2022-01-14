@@ -73,14 +73,30 @@ public class RunProgram {
 				Employee newEmployee = new Employee(first_name, last_name, salary, department);
 				EmployeeDaoFile fileRunner2 = new EmployeeDaoFile();
 				fileRunner2.addEmployee(newEmployee);
+				one.close();
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 			break;
 		case "3":
 			System.out.println("Updating entries");
+			
+			System.out.println("Please enter the id to update the entry - \n");
+
+			try {
+
+				Scanner two = new Scanner(System.in);
+				String idData = two.next();
+				int idArg = Integer.parseInt(idData);
+				EmployeeDaoFile fileRunner3 = new EmployeeDaoFile();
+				fileRunner3.updateEmployee(idArg);
+				two.close();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 
 			break;
 		case "4":
