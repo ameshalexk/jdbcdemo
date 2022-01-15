@@ -101,6 +101,22 @@ public class RunProgram {
 			break;
 		case "4":
 			System.out.println("Deleting entries");
+			
+			System.out.println("Please enter the id to delete the entry - \n");
+
+			try {
+
+				Scanner two = new Scanner(System.in);
+				String idDel = two.next();
+				int idArg = Integer.parseInt(idDel);
+				EmployeeDaoFile fileRunner4 = new EmployeeDaoFile();
+				fileRunner4.deleteEmployee(idArg);
+				two.close();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 
 			break;
 		default:

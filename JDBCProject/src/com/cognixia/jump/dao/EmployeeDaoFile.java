@@ -72,8 +72,10 @@ public class EmployeeDaoFile implements EmployeeDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		if (count == 1)
-			return true;
+		if (count == 1){
+			System.out.println("Added Employee : " + employee.getFirst_Name() + employee.getLast_Name());
+			return true;			
+		}
 		return false;
 	}
 
@@ -140,14 +142,37 @@ public class EmployeeDaoFile implements EmployeeDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		if (count == 1)
+		if (count == 1) {
+			System.out.println("Employee entry updated for : " + employee2.getFirst_Name() + employee2.getLast_Name());
 			return true;
+		}
+		System.out.println("Nothing to update!");
+			
 		return false;
 
 	}
 
 	@Override
 	public boolean deleteEmployee(int id) {
+		Employee employee = new Employee();
+
+		int count = 0;
+		try {
+			PreparedStatement statement = connection.prepareStatement("DELETE FROM employees WHERE id = ?");
+			statement.setInt(1, id);
+			count = statement.executeUpdate();
+			statement.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if (count == 1) {
+			System.out.println("Deleted entry!");
+			return true;
+		}
+		System.out.println("entry not found ");
+
 		return false;
 	}
 
@@ -172,6 +197,7 @@ public class EmployeeDaoFile implements EmployeeDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Employee entry found!");
 		return employee;
 	}
 
