@@ -8,7 +8,7 @@ import com.cognixia.jump.dao.EmployeeDaoFile;
 
 public class RunProgram {
 
-	public void runner() {
+	public void runner() throws InvalidEntryException {
 		System.out.println("Welcome, please enter the below codes to run data operations - \n");
 		System.out.println("1 - View entries");
 		System.out.println("2 - Add entries");
@@ -122,6 +122,8 @@ public class RunProgram {
 		default:
 			System.out.println("Invalid Input....exiting program!!!");
 			enterProgram2.close();
+			throw new InvalidEntryException("1 or 2 or 3 or 4 only!!!");
+
 		}
 
 	}
