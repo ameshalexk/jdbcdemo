@@ -16,7 +16,8 @@ public class EmployeeDaoFile implements EmployeeDao {
 	private Connection connection = ConnectionManagerWithProps.getConnection();
 	Scanner one = new Scanner(System.in);
 
-	private String entryChecker() {
+	public String entryChecker() {
+
 		String line = null;
 		String output = "";
 		if (!(line = one.nextLine()).isEmpty()) {
@@ -123,7 +124,7 @@ public class EmployeeDaoFile implements EmployeeDao {
 		}
 
 		System.out.println(employee2.toString());
-		one.close();
+//		one.close();
 		
 		int count = 0;
 		try {
